@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
+Yarn version: 
+  0.24.6
+
+Node version: 
+  10.11.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "node-express-mini",
+    "version": "0.0.1",
+    "description": "LambdaSchool Node.js and Express Mini Project",
+    "license": "ISC",
+    "scripts": {
+      "start": "eslint src/*.js && nodemon src/app.js"
+    },
+    "dependencies": {
+      "babel-preset-es2015": "^6.24.0",
+      "body-parser": "^1.17.2",
+      "eslint": "^3.17.1",
+      "eslint-config-airbnb": "^14.1.0",
+      "eslint-plugin-import": "^2.2.0",
+      "express": "^4.15.4",
+      "knex": "^0.15.2",
+      "sqlite3": "^4.0.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/d2rd/LambdaSchool/CSPT2/10_Node-Express/node-express-mini_cspt2/node_modules/sqlite3/node_modules'
