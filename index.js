@@ -7,6 +7,7 @@ const PORT = 4000;
 
 //endpoints
 
+// GET
 server.get('/api/users', (req, res) => {
   db.find()
     .then((users) => {
@@ -19,6 +20,7 @@ server.get('/api/users', (req, res) => {
     });
 });
 
+// GETBYID
 server.get('/api/users/:id', (req, res) => {
   const { id } = req.params;
   db.findById(id)
@@ -40,17 +42,37 @@ server.get('/api/users/:id', (req, res) => {
 
 });
 
+// POST
 server.post('/api/users', (req, res) => {
   const user = req.body;
+  console.log(' user from body user', user)
   db.insert(user).then(idInfo => {
-    res.json(idInfo);
+    res.json(idInfo).status(201);
+    console.log('user from insert method', user)
   })
   .catch(err => {
     res
     .status(500)
-    .json({message: "failed insert in user db"});
+    .json({message: 'failed insert in user db'});
   });
 });
+
+
+// replies to michael trew's post
+// server.post('/api/users/', (req, res) => {
+//   const user = req.body;
+//   console.log(' user from body user', user)
+//   db.insert(user).then(idInfo => {
+//     res.json(idInfo).status(201);
+//     console.log('user from insert method', user)
+//   }).catch(err => {
+//     res.status(500).json({message: 'failed insert user in db'})
+//   });
+// })
+
+
+
+
 
 // DELETE
 server.delete('/api/users/:id', (req, res) => {
